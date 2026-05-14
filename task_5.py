@@ -16,9 +16,9 @@ def validate(value, correct_values):
             return correct_values, error_message + ' ' + value
     return State(count_computation)
   
-finale = validation_state.then(validate('absc')).then(validate('Avd')).then(validate('A12345'))
+finale = validation_state.then(validate('abcd')).then(validate('ABC')).then(validate('A12345'))
 
 correct_str, error_msg = finale.run(str_init['error_message']) 
 
-# ['absc']
-# Not in lower case: Avd A12345
+# ['abcd']
+# Not in lower case: ABC A12345
